@@ -1,4 +1,5 @@
 #/non-production/sector-1/kustomization.yaml
 # specify resources to be synced or rendered
 resources:
-- "root-configuration" # setup root sync objects
+- "root-configurations/ciso" # setup root sync object for ciso
+- "root-configurations/platform" # setup root sync object for platform
