@@ -1,7 +1,7 @@
 apiVersion: configsync.gke.io/v1beta1
 kind: RootSync
 metadata:
-  name: platform_root_repo
+  name: platformrootconfig
   namespace: config-management-system
 spec:
   sourceFormat: unstructured
