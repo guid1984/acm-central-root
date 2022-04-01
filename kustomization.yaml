@@ -1,5 +1,25 @@
-#/non-production/sector-1/kustomization.yaml
-# specify resources to be synced or rendered
-resources:
-- "root-configurations/ciso" # setup root sync object for ciso
-- "root-configurations/platform" # setup root sync object for platform
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: ciso_root_repo
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+   repo: https://github.com/guid1984/acm-ciso-root.git
+     revision: HEAD
+     branch: main
+     auth: none
+---
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: platform_root_repo
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+   repo: https://github.com/guid1984/acm-platform-root.git
+     revision: HEAD
+     branch: main
+     auth: none
