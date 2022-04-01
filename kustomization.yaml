@@ -1,25 +1,5 @@
-apiVersion: configsync.gke.io/v1beta1
-kind: RootSync
-metadata:
-  name: ciso_root_repo
-  namespace: config-management-system
-spec:
-  sourceFormat: unstructured
-  git:
-   repo: https://github.com/guid1984/acm-ciso-root.git
-     revision: HEAD
-     branch: main
-     auth: none
----
-apiVersion: configsync.gke.io/v1beta1
-kind: RootSync
-metadata:
-  name: platform_root_repo
-  namespace: config-management-system
-spec:
-  sourceFormat: unstructured
-  git:
-   repo: https://github.com/guid1984/acm-platform-root.git
-     revision: HEAD
-     branch: main
-     auth: none
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ciso-root-sync.yaml
+- platform-root-sync.yaml
