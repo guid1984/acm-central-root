@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- svc/ciso-root-sync.yaml
-- svc/platform-root-sync.yaml
+- fleets/svc/crd-ciso-root-sync.yaml
+- fleets/svc/crd-platform-root-sync.yaml

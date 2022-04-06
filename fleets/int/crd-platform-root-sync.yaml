@@ -8,5 +8,5 @@ spec:
   git:
    repo: https://github.com/guid1984/acm-platform-root.git
    revision: HEAD
-   branch: main
+   branch: staging
    auth: none
